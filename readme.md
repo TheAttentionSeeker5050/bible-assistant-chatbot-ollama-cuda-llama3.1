@@ -1,0 +1,1 @@
+# Bible Assistant Using Python, Ollama3.1, Langchain
