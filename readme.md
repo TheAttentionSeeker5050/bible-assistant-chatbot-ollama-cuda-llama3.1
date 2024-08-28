@@ -3,19 +3,20 @@
 
 ## Overview
 
-The Divine Wisdom Chatbot is a Python-based application designed to provide guidance, reprimand, and advice from a biblical perspective. This chatbot uses a model to respond to user queries with divine wisdom, biblical advice, and relevant Bible verses.
+The Divine Wisdom Chatbot is a Python-based application designed to offer spiritual guidance, advice, and support from a biblical perspective. This chatbot utilizes natural language processing (NLP) to enhance query matching and integrates with the Llama 3.1 model from Ollama to provide thoughtful responses based on Bible verses.
 
 ## Features
 
-1. **Biblical Reprimand**: Identifies and explains the wrongness of sinful behavior or issues from a biblical perspective.
-2. **Divine Advice**: Provides practical guidance and advice on correcting behavior or seeking forgiveness.
-3. **Bible Verses**: Cites up to three relevant Bible verses that align with the advice given.
+1. **Spiritual Guidance**: Offers insights and explanations on behavioral issues and moral dilemmas from a spiritual perspective.
+2. **Practical Advice**: Provides actionable advice on personal development, forgiveness, and self-improvement.
+3. **Bible Verses**: Cites up to three relevant Bible verses that align with the guidance provided.
+4. **NLP Query Processing**: Uses NLTK for preprocessing queries to include synonyms and relevant terms for more accurate database matching.
 
 ## Components
 
 - **`config.py`**: Contains configuration settings, including the model name.
-- **`query_processor.py`**: Loads and processes the text from the database and handles user queries.
-- **`llm_model.py`**: Interacts with the model to generate responses based on user input.
+- **`query_processor.py`**: Handles NLP preprocessing of user queries and transforms them for SQL database searches.
+- **`llm_model.py`**: Interacts with the Llama 3.1 model to generate responses based on user input.
 - **`main.py`**: Main script that integrates all components and facilitates user interaction.
 - **`bible.db`**: SQLite database containing the Bible verses.
 
@@ -43,15 +44,28 @@ The Divine Wisdom Chatbot is a Python-based application designed to provide guid
    pip install -r requirements.txt
    ```
 
-4. **Install Ollama**
+
+4. **Install NLTK Data**
+
+Run the following Python script to download the necessary NLTK data:
+
+```python
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('punkt_tab')
+```
+
+5. **Install Ollama**
 
    Follow the installation instructions for Ollama, available at [Ollama Installation Guide](https://ollama.com/docs/installation).
 
-5. **Pull Llama3.1**
+6. **Pull Llama3.1**
 
    To pull and use the Llama3.1 model, follow the instructions on [Llama3.1 Model Guide](https://huggingface.co/models) or the Ollama documentation.
 
-6. **Install CUDA**
+7. **Install CUDA**
 
    Follow the official [CUDA Installation Guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/) to install CUDA and ensure it is compatible with your GPU and system.
 
@@ -63,15 +77,15 @@ This program has been tested with an Nvidia RTX 4060 graphics card.
 
 1. **Run the Chatbot**
 
-   To start the chatbot, execute the main script:
+To start the chatbot, execute the main script:
 
-   ```bash
-   python main.py
-   ```
+```bash
+python main.py
+```
 
 2. **Interact with the Chatbot**
 
-   Follow the on-screen prompts to interact with the chatbot. Ask questions about personal issues, and the chatbot will provide biblical advice, reprimands, and relevant verses.
+Follow the on-screen prompts to interact with the chatbot. Ask questions about personal issues, and the chatbot will provide biblical advice, reprimands, and relevant verses.
 
 ## Example Interaction
 
