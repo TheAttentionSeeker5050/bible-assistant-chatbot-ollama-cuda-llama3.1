@@ -1,14 +1,14 @@
 import sqlite3
-import nltk
+# import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords, wordnet
 import string
 
 # Download necessary NLTK data files (you only need to do this once)
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('punkt_tab')
+# nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('wordnet')
+# nltk.download('punkt_tab')
 
 # Set of stopwords and punctuation
 stop_words = set(stopwords.words('english'))
@@ -131,3 +131,17 @@ def query_database(query):
         print(f"An error occurred: {e}")
 
     return results
+
+def is_denial(response):
+    """
+    Checks if the response is a denial based on specific keywords.
+    If the response is longer than 7 lines, it is considered non-denial automatically.
+
+    Parameters:
+    response (str): The text response from the model.
+
+    Returns:
+    bool: True if the response is a denial, False otherwise.
+    """
+    denial_keywords = ["deny", "unable to assist", "cannot help", "no answer", "not applicable"]
+    return any(keyword in response.lower() for keyword in denial_keywords)

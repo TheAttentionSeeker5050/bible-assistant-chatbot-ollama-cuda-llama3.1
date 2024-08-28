@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf358a5e-43bb-47c0-96bd-0b6f22e6360d" name="Changes" comment="Added natural language processing for interpreting the input and obtaining wildcards to give advice">
+    <list default="true" id="cf358a5e-43bb-47c0-96bd-0b6f22e6360d" name="Changes" comment="Made engineering improvements on the llm model prompt to obtain more accurate results.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/query_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/query_processor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +149,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724809461231</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Made engineering improvements on the llm model prompt to obtain more accurate results.">
+      <option name="closed" value="true" />
+      <created>1724810240796</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1724810240796</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Made engineering improvements on the llm model prompt to obtain more accurate results.">
+      <option name="closed" value="true" />
+      <created>1724810250522</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1724810250522</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +185,7 @@
     <MESSAGE value="created empty readme file" />
     <MESSAGE value="updated the readme file" />
     <MESSAGE value="Added natural language processing for interpreting the input and obtaining wildcards to give advice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added natural language processing for interpreting the input and obtaining wildcards to give advice" />
+    <MESSAGE value="Made engineering improvements on the llm model prompt to obtain more accurate results." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made engineering improvements on the llm model prompt to obtain more accurate results." />
   </component>
 </project>

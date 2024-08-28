@@ -89,23 +89,32 @@ Follow the on-screen prompts to interact with the chatbot. Ask questions about p
 
 ## Example Interaction
 
-```
+```markdown
 Welcome to the Divine Wisdom Chatbot! Ask me anything about your behavior or personal issues.
 
 You: I feel envious of my colleague's success. What should I do?
-Bot: My child, envy is a weighty sin that can lead you down a path of darkness and discontentment. It is wrong to covet another person's success or possessions, for it is rooted in pride and a lack of trust in God's provision for your own life (Proverbs 28:22).
+Bot: I'm so glad you're seeking guidance on this matter!
 
-Recognize that jealousy can consume your thoughts and actions, causing you to behave in ways that are contrary to God's will. It can lead you to compare yourself unfavorably with others, forget the blessings He has given you, and become envious of those who seem to have more (James 4:1-3).
+**1. The Problem:**
+Feeling envious of someone else's success is a problematic behavior, my friend. From a biblical perspective, envy is considered a root of all kinds of evil (1 Timothy 6:6-10). When
+ we covet what others have, it can lead to bitterness, resentment, and even anger. This negative attitude can poison our relationships, hinder our own growth, and distract us from pursuing God's best for our lives.
 
-To correct this behavior, I advise you to examine your heart and acknowledge before Me any feelings of resentment or bitterness towards your colleague's success. Recognize that their achievement is not a reflection of your worth, but rather a demonstration of God's goodness and faithfulness in their life.
+**2. Practical Advice:**
+To overcome this envy, let's focus on three essential steps:
 
-Adopt an attitude of humility and gratitude by focusing on the blessings He has given you. Seek to understand the value of the gifts and opportunities He has provided for you, even if they differ from those of others (1 Timothy 6:6-8).
+a) **Reflect on your own values and goals**: Take time to prayerfully assess what truly matters to you. What are your passions? What are your strengths? Focus on developing those qualities, and God will help you find success in His way.
 
-Here are three relevant Bible verses that can guide you in this journey:
+b) **Practice gratitude**: Regularly express thankfulness for the blessings you already have, no matter how small they may seem. A grateful heart is less prone to envy (1 Thessalonians 5:18). Cultivate a mindset that says, "God is good, and I am blessed."
 
-1. "Pride goes before destruction, a haughty spirit before a fall." - Proverbs 16:18
-2. "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God." - Philippians 4:6
-3. "For we brought nothing into the world, and we can take nothing out of it. But if you have a mind that is any value at all, then use it well. As for me, my child, I will now leave this matter with you, in the hands of the Lord." - 1 Timothy 6:7-10
+c) **Celebrate others' successes with joy**: When your colleague achieves something remarkable, genuinely rejoice with them! This attitude will help you see that their success doesn't diminish yours. In fact, it can inspire and motivate you to strive for greatness in your own life (Romans 12:15).
+
+**3. Relevant Bible Verses:**
+
+* "For God is not a God of disorder but of peaceâ€”as also in all the congregations of his holy people." (1 Corinthians 14:33) - This verse reminds us that envy can lead to chaos and unrest, while gratitude and joy promote harmony and peace.
+* "Do nothing out of selfish ambition or vain conceit. Rather, in humility value others above yourselves..." (Philippians 2:3) - Humility is the antidote to envy. Focus on valuing others and serving with a humble heart.
+* "Let your yes be yes and your no be no... Whatever you say or do, say it or do it as those who are under Godâ€™s authority." (James 5:12) - This verse encourages us to maintain integrity in our words and actions. Seek to honor God in all that you do.
+
+Remember, my friend, you are not defined by your envy. You have the power to choose a different path â€“ one of gratitude, humility, and joy. May God's wisdom guide you as you navigate this journey!
 ```
 
 ## Troubleshooting
