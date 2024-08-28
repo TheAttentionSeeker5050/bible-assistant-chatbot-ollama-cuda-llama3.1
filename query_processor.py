@@ -1,38 +1,133 @@
 import sqlite3
-from config import Config
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords, wordnet
+import string
 
-class QueryProcessor:
-    def __init__(self, db_file):
-        self.db_file = db_file
+# Download necessary NLTK data files (you only need to do this once)
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('punkt_tab')
 
-    def find_verses(self, query):
-        """
-        Finds Bible verses matching the query.
-        :param query: The user's query.
-        :return: A list of relevant verses with their verse count.
-        """
-        found_verses = []
-        conn = sqlite3.connect(self.db_file)
-        c = conn.cursor()
-        c.execute('''
-            SELECT Book, Chapter, Versecount, verse FROM bible
-            WHERE verse LIKE ?
-        ''', ('%' + query + '%',))
-        rows = c.fetchall()
-        book_names = [
-            "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges",
-            "Ruth", "1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles",
-            "Ezra", "Nehemiah", "Esther", "Job", "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon",
-            "Isaiah", "Jeremiah", "Lamentations", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos",
-            "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai", "Zechariah",
-            "Malachi", "Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians",
-            "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians",
-            "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James",
-            "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"
-        ]
-        for row in rows[:3]:  # Limit to 3 verses
-            book_index, chapter, verse_count, verse_text = row
-            book_name = book_names[book_index]
-            found_verses.append(f"{book_name} {chapter} (Verse Count: {verse_count}): {verse_text}")
-        conn.close()
-        return found_verses
+# Set of stopwords and punctuation
+stop_words = set(stopwords.words('english'))
+punctuation = set(string.punctuation)
+
+
+def preprocess_query(query):
+    """
+    Preprocesses the user query for better database matching using NLP techniques.
+
+    Parameters:
+    query (str): The user's query.
+
+    Returns:
+    str: The preprocessed query suitable for SQL LIKE queries.
+    """
+    # Tokenize the query
+    tokens = word_tokenize(query.lower())
+
+    # Remove stop words and punctuation
+    filtered_tokens = [token for token in tokens if token not in stop_words and token not in punctuation]
+
+    # Join tokens into a single string
+    preprocessed_query = ' '.join(filtered_tokens)
+
+    return preprocessed_query
+
+
+def get_synonyms(word):
+    """
+    Returns a list of synonyms for a given word using WordNet.
+
+    Parameters:
+    word (str): The word to find synonyms for.
+
+    Returns:
+    list: A list of synonyms.
+    """
+    synonyms = set()
+    for syn in wordnet.synsets(word):
+        for lemma in syn.lemmas():
+            synonyms.add(lemma.name())
+    return list(synonyms)
+
+
+def expand_query_with_synonyms(query):
+    """
+    Expands the user query to include synonyms for better matching in the database.
+
+    Parameters:
+    query (str): The user's query to be expanded.
+
+    Returns:
+    str: The expanded query with synonyms.
+    """
+    tokens = word_tokenize(query.lower())
+    expanded_tokens = []
+
+    for token in tokens:
+        # Add the original token
+        expanded_tokens.append(token)
+        # Add synonyms
+        synonyms = get_synonyms(token)
+        expanded_tokens.extend(synonyms)
+
+    # Remove duplicates and punctuation
+    expanded_tokens = [token for token in expanded_tokens if token not in stop_words and token not in punctuation]
+
+    # Join tokens into a single string
+    expanded_query = ' '.join(expanded_tokens)
+
+    return expanded_query
+
+
+def transform_query_for_db(query):
+    """
+    Transforms the user query into a format suitable for SQL LIKE queries, including synonyms.
+
+    Parameters:
+    query (str): The user's query to be transformed.
+
+    Returns:
+    str: The transformed query suitable for SQL LIKE queries.
+    """
+    # Preprocess the query
+    preprocessed_query = preprocess_query(query)
+
+    # Expand query with synonyms
+    expanded_query = expand_query_with_synonyms(preprocessed_query)
+
+    # Escape special characters and add wildcards
+    transformed_query = expanded_query.replace("'", "''")
+    transformed_query = f"%{transformed_query}%"
+
+    return transformed_query
+
+
+def query_database(query):
+    """
+    Queries the database using the transformed query.
+
+    Parameters:
+    query (str): The user's query to be used for searching the database.
+
+    Returns:
+    list: A list of results matching the query.
+    """
+    db_path = 'bible.db'
+    transformed_query = transform_query_for_db(query)
+    results = []
+
+    try:
+        # Connect to the database
+        with sqlite3.connect(db_path) as conn:
+            cursor = conn.cursor()
+            # Query the database
+            cursor.execute("SELECT * FROM bible WHERE verse LIKE ?", (transformed_query,))
+            results = cursor.fetchall()
+    except sqlite3.Error as e:
+        print(f"An error occurred: {e}")
+
+    return results

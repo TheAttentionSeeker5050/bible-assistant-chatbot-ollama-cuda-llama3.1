@@ -1,6 +1,6 @@
 import sqlite3
-
 from llm_model import LLMModel
+from query_processor import query_database
 
 
 class QueryProcessor:
@@ -13,15 +13,9 @@ class QueryProcessor:
         :param query: The user's query.
         :return: A list of relevant verses.
         """
-        conn = sqlite3.connect(self.db_file)
-        cursor = conn.cursor()
-
-        # Sample query: Customize this SQL to match how you want to search
-        cursor.execute("SELECT verse FROM bible WHERE verse LIKE ?", ('%' + query + '%',))
-        rows = cursor.fetchall()
-        conn.close()
-
-        return [row[0] for row in rows]
+        # Use the query_database function from query_preprocessor.py to perform the search
+        results = query_database(query)
+        return [row[0] for row in results if row]
 
 
 class BookChatbot:

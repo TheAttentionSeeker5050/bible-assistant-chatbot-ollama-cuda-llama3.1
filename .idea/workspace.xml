@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf358a5e-43bb-47c0-96bd-0b6f22e6360d" name="Changes" comment="created empty readme file">
+    <list default="true" id="cf358a5e-43bb-47c0-96bd-0b6f22e6360d" name="Changes" comment="updated the readme file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/query_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/query_processor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724806772764</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated the readme file">
+      <option name="closed" value="true" />
+      <created>1724807635568</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724807635568</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +158,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="initial commit, created a bible assistant" />
     <MESSAGE value="created empty readme file" />
-    <option name="LAST_COMMIT_MESSAGE" value="created empty readme file" />
+    <MESSAGE value="updated the readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated the readme file" />
   </component>
 </project>
