@@ -116,7 +116,7 @@ def query_database(query):
     Returns:
     list: A list of results matching the query.
     """
-    db_path = 'bible.db'
+    db_path = '../bible.db'
     transformed_query = transform_query_for_db(query)
     results = []
 

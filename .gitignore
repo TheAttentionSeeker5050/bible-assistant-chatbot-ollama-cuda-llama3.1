@@ -1,0 +1,10 @@
+/chatbot_pb2.py
+/chatbot_pb2_grpc.py
+
+venv
+.env
+*.env
+__pycache__
+.idea
+
+chatbot_pb2*

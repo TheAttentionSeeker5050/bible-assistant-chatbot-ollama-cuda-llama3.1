@@ -1,12 +1,14 @@
-import subprocess
-from config import Config
-from query_processor import is_denial
+from MyLanguageModels.config import Config
+from MyLanguageModels.query_processor import is_denial
 
 import subprocess
 import re
 from urllib.parse import quote
 
 class LLMModel:
+    """
+    Mock class for a language model that generates responses.
+    """
     def __init__(self):
         """
         Initializes the LLMModel with configuration settings.

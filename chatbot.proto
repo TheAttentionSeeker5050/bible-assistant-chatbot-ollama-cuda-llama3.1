@@ -1,0 +1,21 @@
+// chatbot.proto that that defines the gRPC service and messages.
+// This file will describe the RPC methods and their input/output types.
+
+syntax = "proto3";
+
+package chatbot;
+
+// The request message containing the user's question.
+message QueryRequest {
+  string question = 1;
+}
+
+// The response message containing the chatbot's answer.
+message QueryResponse {
+  string answer = 1;
+}
+
+// The chatbot service definition.
+service Chatbot {
+  rpc GetAnswer (QueryRequest) returns (QueryResponse);
+}
